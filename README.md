@@ -93,3 +93,47 @@ wardend tx staking delegate $(wardend keys show wallet --bech val -a)  1000000uw
     --from=wallet \
     --chain-id=alfama \
     --fees=500uward
+
+```
+### 🚧 Unjail
+```
+wardend tx slashing unjail --from wallet --chain-id alfama --fees=500uward -y
+
+
+```
+### 🚧 Yararlı Komutlar
+```
+# Reload Service
+sudo systemctl daemon-reload
+
+# Enable Service
+sudo systemctl enable wardend
+
+# Disable Service
+sudo systemctl disable wardend
+
+# Start Service
+sudo systemctl start wardend
+
+# Stop Service
+sudo systemctl stop wardend
+
+# Restart Service
+sudo systemctl restart wardend
+
+# Check Service Status
+sudo systemctl status wardend
+
+# Check Service Logs
+sudo journalctl -u wardend -f --no-hostname -o cat
+
+
+```
+### 🚧 Validator Yedekleme
+```
+cat $HOME/.warden/config/priv_validator_key.json
+
+```
+### 🚧 Node Silme
+```
+sudo systemctl stop wardend && sudo systemctl disable wardend && sudo rm /etc/systemd/system/wardend.service && sudo systemctl daemon-reload && rm -rf $HOME/.warden && $HOME/wardenprotocol
